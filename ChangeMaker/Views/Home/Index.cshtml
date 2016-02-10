@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Calculate Change";
+}
+
+
+
+<div class="row">
+    <div class="col-md-8 col-sm-10 col-xs-12">
+
+        <h1>Change Maker</h1>
+        
+        <p>Enter the full (post-tax) price of the purchase and the amount of money received from the customer. The
+        application will determine the change due and the bills/coins with which to make change.</p>
+
+        <form class="form-horizontal" id="change-calc-form" role="form">
+
+            <div class="form-group">
+                <label for="price_of_item" class="col-md-4">Price of Item ($#.##): </label>
+                <input type="text" class="form-control" id="price_of_item" required/><br />
+                <label for="price_of_item" class="error_message" id="purch_format_error"></label>
+                
+               </div>
+
+            <div class="form-group">
+                <label for="amount_tendered" class="col-md-4">Amount tendered as payment ($#.##): </label>
+                <input type="text" class="form-control" id="amount_tendered" required/><br />
+                <label for="amount_tendered" class="error_message" id="tender_format_error"></label>
+                <label for="amount_tendered" class="error_message" id="not_enough_error"></label>
+                
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="amount_change" class="col-md-4">Amount of change ($#.##): </label>
+                <input type="text" class="form-control" id="amount_change" />
+            </div> -->
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    <button type="submit" id="submit_purchase_calc" class="btn btn-default">Submit</button>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="col-md-8">
+
+            <p id="change_result"><strong>Change is: <span id="change_total"></span><br />
+            <span id="twenties"></span> twenties, <span id="tens"></span> tens, <span id="fives"></span> fives, and <span id="ones"></span> ones.
+            <br /> <span id="quarters"></span> quarters, <span id="dimes"></span> dimes, <span id="nickels"></span> nickels, and <span id="pennies"></span> pennies.</strong></p>
+
+        </div>
+
+
+
+    </div>
+</div>
